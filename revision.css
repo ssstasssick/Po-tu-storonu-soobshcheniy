@@ -1,0 +1,72 @@
+/* Revision 2: legibility, stable staging and two mobile views. */
+.dialogue-box{background:#142b25;border-color:#cbb58b66;box-shadow:0 14px 55px #0007;backdrop-filter:none}
+.dialogue-box:before{background:var(--speaker)}
+.speaker-dot{display:none}
+.speaker-name{font-size:20px;font-weight:650;color:var(--speaker);gap:12px}
+.speaker-name small{font-size:11px;color:#c5d0c5}
+.dialogue-copy p{color:var(--speaker);line-height:1.8}
+.line-counter,.keyboard-hint{color:#bac9bf}
+.location-label{width:max-content;max-width:calc(100% - 9vw);background:#142b25f5;border:1px solid #e4d2ae45;border-radius:8px;padding:12px 18px;box-shadow:0 5px 24px #0004;text-shadow:none;z-index:2}
+.location-label span{font-size:12px;color:#e4d3b3}
+.location-label strong{font-size:23px;color:#fff5e4}
+.sprite{animation:none}
+.sprite-enter{animation:character-arrive .7s cubic-bezier(.2,.65,.3,1) both}
+.scene-transition .scene-background{animation:none}
+.scene-transition.on-bus .scene-background{animation:bus-sway 18s ease-in-out infinite alternate}
+.scene-crossfade{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;pointer-events:none;animation:location-dissolve 1.15s cubic-bezier(.2,.45,.3,1) both;will-change:opacity,filter,transform}
+.scene-transition .location-label{animation:caption-arrive .8s ease-out both}
+@keyframes location-dissolve{0%{opacity:1;filter:brightness(1);transform:scale(1)}35%{opacity:.72;filter:brightness(.72)}100%{opacity:0;filter:brightness(.85);transform:scale(1.025)}}
+@keyframes caption-arrive{0%{opacity:0;transform:translateY(5px)}25%{opacity:0}100%{opacity:1;transform:translateY(0)}}
+@keyframes character-arrive{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.task-hint{margin:0;padding:10px 13px;display:flex;gap:9px;align-items:flex-start;font-size:11px;line-height:1.55;background:#fff2d3;color:#3c482f;border-top:1px solid #b7ad8f;flex-shrink:0}
+.task-hint .icon{width:16px;height:19px;margin-top:1px}
+.task-open{display:flex;align-items:center;gap:8px;border:1px solid #b6c39466;color:#e9dbb4;padding:9px 12px;margin-top:15px;font-size:12px;text-align:left;background:#294435}
+.task-open .icon{width:17px}
+.typing-indicator{font-size:12px;color:#3e5b46;background:#fffdf6;border-radius:12px;padding:11px 15px;width:max-content;margin:8px 0 12px}
+.typing-indicator span{display:inline-block;animation:typing-dots 1s ease-in-out infinite}
+@keyframes typing-dots{50%{opacity:.3}}
+.chat-message{font-size:12px}.chat-author{font-size:11px;color:#5b4a25}
+.chat-author[data-speaker=anya]{color:#87385f}.chat-author[data-speaker=artem]{color:#894526}.chat-author[data-speaker=kristina]{color:#913c52}.chat-author[data-speaker=dasha]{color:#594b91}.chat-author[data-speaker=mother]{color:#805020}.chat-author[data-speaker=maxim]{color:#315b86}.chat-author[data-speaker=curator]{color:#2f664d}
+.phone-contact strong{font-size:14px}.phone-contact small{font-size:11px;color:#52644f}
+button.notification-card,button.code-notice,button.attachment{display:block;width:100%;text-align:left;border:1px solid #8a9d8280;color:#2c4033;background:#fffaf0;margin-bottom:14px;cursor:pointer}
+button.notification-card:hover,button.code-notice:hover,button.attachment:hover{background:#f9efd8!important;border-color:#5b7359!important}
+.notification-card strong,.code-notice strong,.attachment strong{display:block}
+.code-notice>span{display:block}.code-digits{font-size:29px;letter-spacing:.15em;margin:8px 0}
+.accept-call{background:#3a7253;color:#fff9e9;border-color:#a8ceb5;margin:12px auto;min-width:140px}
+.voice-message details button{font-size:12px;color:#294931;border-color:#7f957b;margin:8px 0}
+.help-card-list button.card-read{background:#ceddbe;border-color:#758c67}.help-card-list button.card-read:after{content:'✓';color:#355e37}
+.mobile-view-tabs{display:none}
+@media(max-width:800px){
+ .game-screen.has-phone{padding-top:126px;min-height:100svh}
+ .mobile-view-tabs{display:flex;position:fixed;top:69px;left:0;right:0;z-index:19;background:#142b25;padding:5px 15px;gap:8px;border-bottom:1px solid #b3c0ad44;height:45px}
+ .mobile-view-tabs button{flex:1;padding:5px 8px;font-size:12px;border-color:transparent;border-radius:5px;color:#c3d0be}
+ .mobile-view-tabs button[aria-pressed=true]{color:#f8e5c1;background:#365044;border-color:#8b9e7a66}
+ .location-label{margin-bottom:16px;max-width:100%;width:100%;padding:11px 14px}
+ .location-label span{font-size:11px}.location-label strong{font-size:21px}
+ .speaker-name{font-size:20px}.speaker-name small{font-size:11px}
+ .dialogue-copy p{font-size:calc(17px * var(--text-scale))}
+ .has-phone.view-story .phone-panel{display:none}
+ .has-phone.view-story .sprites.beside-phone{display:flex;height:35svh;min-height:170px}
+ .has-phone.view-phone .sprites,.has-phone.view-phone .dialogue-copy,.has-phone.view-phone .dialogue-top,.has-phone.view-phone .task-open,.has-phone.view-phone .location-label,.has-phone.view-phone .scene-bottom{display:none}
+ .has-phone.view-phone .phone-panel{height:calc(100svh - 193px);min-height:300px;max-height:750px;margin:0 auto 5px;max-width:390px}
+ .has-phone.view-phone .phone-case{height:100%}
+ .has-phone.view-phone .dialogue-zone{margin:0;max-width:390px}
+ .has-phone.view-phone .dialogue-box{padding:5px 10px;border-color:transparent;background:#142b25}
+ .has-phone.view-phone .dialogue-box:before{display:none}
+ .has-phone.view-phone .dialogue-footer{margin:0;min-height:35px}
+ .has-phone.view-phone .dialogue-footer>span:first-child{max-width:65%}
+ .has-phone.view-phone .choices{position:fixed;bottom:12px;left:12px;right:12px;z-index:30;padding:10px;background:#142b25;border:1px solid #b7a47877;border-radius:9px;max-height:48svh;overflow:auto}
+ .task-hint{font-size:11px;padding:8px 11px}.phone-tools button{font-size:11px}
+ .scene-crossfade{position:fixed}
+}
+@media(prefers-reduced-motion:reduce){.scene-crossfade{display:none}.scene-transition .location-label,.sprite-enter,.typing-indicator span{animation:none}}
+.reduce-motion .scene-crossfade{display:none}
+
+.outgoing-cast{animation:cast-depart .65s ease-in-out both;pointer-events:none}
+.outgoing-cast .sprite{animation:none!important}
+@keyframes cast-depart{from{opacity:1;filter:blur(0)}to{opacity:0;filter:blur(2px)}}
+.reduce-motion .outgoing-cast{display:none}
+
+/* A scene caption lasts five seconds; hidden captions retain their layout space. */
+.location-label{transition:opacity .55s ease,visibility 0s linear .55s}
+.location-label.caption-hidden{opacity:0;visibility:hidden;animation:none;pointer-events:none}

@@ -1,0 +1,73 @@
+/* Comfortable reading at Full HD and above; system/browser scaling still applies. */
+@media (min-width: 1800px) and (min-height: 750px) {
+  .game-screen { --stage-phone: clamp(440px, 24vw, 560px); --stage-header: 84px; }
+  .game-screen .dialogue-zone { max-width: 1400px; }
+  .game-screen .dialogue-zone.beside-phone { max-width: 1100px; }
+  .game-screen .dialogue-box { padding: 27px 32px 20px; }
+  .game-screen .dialogue-copy { min-height: 110px; max-height: 31dvh; }
+  .game-screen .dialogue-copy p { font-size: calc(clamp(24px, 1.25vw, 36px) * var(--text-scale)); line-height: 1.7; }
+  .game-screen .speaker-name { font-size: clamp(27px, 1.45vw, 38px); }
+  .game-screen .speaker-name small { font-size: 15px; }
+  .game-screen .chapter-heading > strong { font-size: 20px; }
+  .game-screen .chapter-heading > span, .game-screen .autosave { font-size: 12px; }
+  .game-screen .dialogue-footer { margin-top: 20px; }
+  .game-screen .keyboard-hint, .game-screen .choose-hint, .game-screen .replay-line { font-size: 15px; }
+  .game-screen .next-line { font-size: 19px; min-height: 44px; }
+  .game-screen .task-open { font-size: 17px; min-height: 48px; padding: 12px 16px; }
+  .game-screen .choices button { font-size: calc(clamp(18px, .95vw, 26px) * var(--text-scale)); min-height: 60px; padding: 15px 20px; }
+  .game-screen .choice-index { font-size: 14px; }
+  .game-screen .scene-bottom, .game-screen .scene-bottom button { font-size: 14px; }
+  .game-screen .phone-panel { top: auto; height: min(calc(100dvh - var(--stage-header) - var(--safe-top) - var(--safe-bottom) - 66px), clamp(850px, 79dvh, 1100px)); max-height: none; }
+  .game-screen .phone-header { padding: 16px; min-height: 78px; }
+  .game-screen .phone-contact strong { font-size: 20px; }
+  .game-screen .phone-contact small { font-size: 15px; }
+  .game-screen .phone-status { font-size: 13px; height: 36px; }
+  .game-screen .phone-scroll { padding: 20px 17px; }
+  .game-screen .chat-message, .game-screen .notification-card { font-size: clamp(17px, .94vw, 23px); line-height: 1.65; padding: 14px 16px 10px; }
+  .game-screen .chat-message small { font-size: 12px; }
+  .game-screen .chat-author, .game-screen .chat-system, .game-screen .typing-indicator { font-size: 15px; }
+  .game-screen .notification-card strong { font-size: 18px; }
+  .game-screen .phone-tools > button { font-size: 15px; min-height: 50px; padding: 12px 14px; }
+  .game-screen .task-hint { font-size: 15px; line-height: 1.5; padding: 12px 15px; }
+  .game-screen .feed-heading { font-size: 26px; }
+  .game-screen .feed-heading small, .game-screen .feed-author small { font-size: 12px; }
+  .game-screen .feed-author strong { font-size: 16px; }
+  .game-screen .feed-post h3 { font-size: 19px; }
+  .game-screen .feed-post > p { font-size: 17px; line-height: 1.65; }
+  .game-screen .feed-end { font-size: 14px; }
+  .game-screen .voice-message details, .game-screen .voice-message details p, .game-screen .voice-message details button { font-size: 16px; }
+  .game-screen .voice-play { width: 48px; height: 48px; }
+  .game-screen .voice-time { font-size: 13px; }
+  .game-screen .attachment strong { font-size: 18px; }
+  .game-screen .attachment small, .game-screen .source-card span, .game-screen .source-card small { font-size: 14px; }
+  .game-screen .source-card strong { font-size: 27px; }
+  .game-screen .code-notice { font-size: 16px; }
+  .game-screen .code-digits { font-size: 36px; }
+  .game-screen .call-screen > strong { font-size: 32px; }
+  .game-screen .call-screen > span:not(.avatar), .game-screen .call-screen small { font-size: 16px; }
+  .game-screen .phone-tools .call-choices button { font-size: 16px; min-height: 86px; }
+  .game-screen .family-rule p, .game-screen .help-card-list strong { font-size: 17px; }
+  .game-screen .help-card-list button > span, .game-screen .family-rule > .eyebrow { font-size: 13px; }
+  .game-screen .alarm-clock { font-size: 66px; }
+  .game-screen .alarm-clock small { font-size: 13px; }
+  .game-screen .alarm-clock button { font-size: 17px; }
+  .menu-screen .wordmark, .menu-screen .chapter-rule { font-size: 14px; }
+  .menu-screen .sound-toggle, .menu-screen .menu-footer button { font-size: 17px; }
+  .menu-screen .menu-copy { max-width: 900px; }
+  .menu-screen .menu-copy h1 { font-size: clamp(106px, 5.5vw, 138px); }
+  .menu-screen .main-navigation > button { font-size: 25px; min-height: 64px; }
+  .menu-screen .main-navigation > button small { font-size: 14px; }
+  .menu-screen .practice-resume { font-size: 15px; max-width: 560px; }
+  dialog { width: min(920px, calc(100vw - 80px)); }
+  .modal-header h2 { font-size: 38px; }
+  .modal-header .eyebrow { font-size: 12px; }
+  .modal-body p, .modal-body li { font-size: 18px; }
+  .modal-body h3 { font-size: 24px; }
+  .modal-body button, .modal-body .setting-row, .modal-body .setting-row select { font-size: 16px; }
+  .modal-body .setting-row small { font-size: 13px; max-width: 360px; }
+  .modal-body .chapter-card strong { font-size: 30px; }
+  .modal-body .chapter-card-content > span:not(.eyebrow) { font-size: 15px; }
+  .table-dialog .data-preview th, .table-dialog .data-preview td { font-size: 17px; }
+  .table-dialog .data-preview caption { font-size: 16px; }
+  .materials-dialog .fake-screenshot p { font-size: 18px; }
+}

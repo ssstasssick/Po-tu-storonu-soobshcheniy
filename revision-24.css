@@ -1,0 +1,27 @@
+.incoming-anya{padding-top:25px;gap:12px}
+.incoming-anya>.avatar{width:90px;height:90px;box-shadow:0 0 0 6px #75936b20}
+.incoming-anya .call-ripple{animation:incoming-pulse 1.5s ease-in-out infinite}
+.call-choices{display:flex;gap:12px;width:100%;margin-top:20px;justify-content:center}
+.call-choices button{flex:1;min-width:0;max-width:150px;min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:0;border-radius:14px;padding:14px 8px;font-size:12px;font-weight:600;box-shadow:0 5px 14px #1b392222}
+.call-choices .call-accept{background:#376e49;color:#fff8e8}
+.call-choices .call-accept:hover{background:#254e33;color:#fff8e8}
+.call-choices .call-decline{background:#9d4542;color:#fff8e8}
+.call-choices .call-decline:hover{background:#7c3432;color:#fff8e8}
+.call-decline .icon{rotate:135deg}
+.call-choices .icon{width:25px;height:25px}
+@keyframes incoming-pulse{50%{box-shadow:0 0 0 14px #65866218;scale:1.06}}
+.reduce-motion .incoming-anya .call-ripple{animation:none}
+@media(prefers-reduced-motion:reduce){.incoming-anya .call-ripple{animation:none}}
+@media(max-width:800px){.incoming-anya{min-height:340px;justify-content:center}.call-choices{margin-top:12px}}
+
+/* Call decisions stay pinned outside the scrollable caller information. */
+.incoming-anya{padding:12px 0;gap:8px;min-height:0;justify-content:center}
+.incoming-anya>.avatar{width:76px;height:76px;margin-bottom:8px;animation:incoming-avatar 1.5s ease-in-out infinite}
+.incoming-anya>strong{font-size:25px}
+.phone-tools .call-choices{width:100%;padding:11px;margin:0;gap:10px;background:#f6f2e9}
+.phone-tools .call-choices button{min-height:75px;max-width:none;padding:12px 6px;font-size:12px;gap:7px}
+.phone-tools .call-choices .call-accept:hover{background:#254e33!important}
+.phone-tools .call-choices .call-decline:hover{background:#7c3432!important}
+@keyframes incoming-avatar{50%{box-shadow:0 0 0 11px #75936b15}}
+.reduce-motion .incoming-anya>.avatar{animation:none}
+@media(prefers-reduced-motion:reduce){.incoming-anya>.avatar{animation:none}}

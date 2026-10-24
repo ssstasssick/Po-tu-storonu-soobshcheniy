@@ -1,0 +1,31 @@
+/* No part of the incoming scene is painted before decoding completes. */
+.scene-preparing{visibility:hidden!important}
+.scene-preparing .sprite,.scene-preparing .scene-background{animation-play-state:paused!important}
+.location-bridge.scene-loader{animation:none!important;opacity:1!important;transition:opacity .32s ease;z-index:9000}
+.scene-loader .bridge-art{visibility:hidden;animation:none;opacity:1}
+.scene-loader.is-ready .bridge-art{visibility:visible;animation:bridge-drift 5s ease-out both}
+.scene-loader .bridge-copy{animation:none;opacity:1;translate:none}
+.scene-loader:not(.is-ready):not(.has-load-error) .bridge-copy{opacity:0;animation:loading-label .2s .25s forwards}
+.scene-loader.is-closing:not(.is-ready) .bridge-copy{animation:none;opacity:0}
+.scene-loader.has-load-error .bridge-copy{animation:none;opacity:1}
+.scene-loader.is-ready .bridge-copy{animation:load-caption .4s ease-out both}
+.scene-loader:not(.is-ready) .bridge-copy strong,.scene-loader:not(.is-ready) .bridge-copy>span,.scene-loader:not(.is-ready) .bridge-timeline{display:none}
+.scene-loader:not(.is-ready) .bridge-copy p{font-family:"Segoe UI",Arial,sans-serif;font-size:16px;letter-spacing:.06em}
+.scene-loader.is-closing{opacity:0!important;pointer-events:none}
+.scene-loader .load-retry{display:block;margin:25px auto 0;background:#f0e6d1;color:#223d31;border-color:#f0e6d1;font-size:14px}
+@keyframes load-caption{from{opacity:0;translate:0 7px}to{opacity:1;translate:0 0}}
+@keyframes loading-label{to{opacity:1}}
+.on-bus .scene-background,.scene-transition.on-bus .scene-background{animation:bus-drive 5.8s ease-in-out infinite;will-change:transform}
+@keyframes bus-drive{
+ 0%,100%{transform:scale(1.075) translate(-.8%,.3%) rotate(-.22deg)}
+ 20%{transform:scale(1.075) translate(.95%,-.5%) rotate(.25deg)}
+ 45%{transform:scale(1.075) translate(-.3%,.65%) rotate(-.1deg)}
+ 70%{transform:scale(1.075) translate(-1.05%,-.35%) rotate(.18deg)}
+ 87%{transform:scale(1.075) translate(.5%,.35%) rotate(-.25deg)}
+}
+.dialogue-copy.is-waiting p{color:#c4ccbf;font-style:italic}
+.material-pair.single{grid-template-columns:1fr}
+@media(max-width:800px){.scene-loader .bridge-copy{width:92vw}}
+.reduce-motion .on-bus .scene-background{animation:none!important;transform:none;will-change:auto}
+.reduce-motion .scene-loader .bridge-art,.reduce-motion .scene-loader .bridge-copy{animation:none!important}
+@media(prefers-reduced-motion:reduce){.on-bus .scene-background{animation:none!important;transform:none;will-change:auto}.scene-loader .bridge-art,.scene-loader .bridge-copy{animation:none!important}}
